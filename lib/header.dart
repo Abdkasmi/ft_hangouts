@@ -1,0 +1,11 @@
+export 'package:flutter/material.dart';
+export 'contactmodel.dart';
+export 'database.dart';
+export 'homepage.dart';
+export 'create_new_contact.dart';
+export 'main.dart';
+export 'edit_contact.dart';
+export 'chats.dart';
+export 'settings.dart';
+export 'contacts.dart';
+// export 'package:sqflite/sqflite.dart';
