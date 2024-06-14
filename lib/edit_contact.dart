@@ -39,7 +39,7 @@ class _EditContactState extends State<EditContact> {
                   child: const Text('Save'),
                   onPressed: () {
                     // myContacts.add(contact);
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const ContactsPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ContactsPage()));
                   },
                   ),
           )
