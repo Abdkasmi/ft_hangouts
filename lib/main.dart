@@ -2,7 +2,9 @@ import 'header.dart';
 
 List<Contact> myContacts = [];
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
   runApp(const MyApp());
 }
 

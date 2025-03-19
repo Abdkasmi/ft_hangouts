@@ -1,4 +1,4 @@
-import 'header.dart';
+import '../header.dart';
 
 class Chats extends StatefulWidget {
   const Chats({super.key});

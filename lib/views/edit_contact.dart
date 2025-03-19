@@ -1,11 +1,10 @@
-import 'header.dart';
+import '../header.dart';
 
 
 class EditContact extends StatefulWidget {
-  final Contact contact = Contact();
+  final Contact contact;
 
-  EditContact({super.key, contact});
-
+  const EditContact({super.key, required this.contact});
 
   @override
   State<EditContact> createState() => _EditContactState();
@@ -39,7 +38,7 @@ class _EditContactState extends State<EditContact> {
                   child: const Text('Save'),
                   onPressed: () {
                     // myContacts.add(contact);
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => ContactsPage()));
+                    Navigator.pop(context);
                   },
                   ),
           )
@@ -48,11 +47,6 @@ class _EditContactState extends State<EditContact> {
       body: SingleChildScrollView(
             child: Column(
             children: [
-              editField(widget.contact.lastName.text, widget.contact.lastName),
-              editField(widget.contact.firstName.text, widget.contact.firstName),
-              editField(widget.contact.phoneNumber.text, widget.contact.phoneNumber),
-              editField(widget.contact.email.text, widget.contact.email),
-              editField(widget.contact.pseudo.text, widget.contact.pseudo),
               const Padding(padding: EdgeInsets.all(50),)
             ]
       ),

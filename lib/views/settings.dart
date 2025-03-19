@@ -1,4 +1,4 @@
-import 'header.dart';
+import '../header.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
