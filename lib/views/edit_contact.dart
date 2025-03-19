@@ -1,6 +1,5 @@
 import '../header.dart';
 
-
 class EditContact extends StatefulWidget {
   final Contact contact;
 
@@ -11,7 +10,6 @@ class EditContact extends StatefulWidget {
 }
 
 class _EditContactState extends State<EditContact> {
-
   Padding editField(String field, TextEditingController input) {
     return Padding(
       padding: const EdgeInsets.only(top: 25, left: 15, right: 25),
@@ -21,37 +19,38 @@ class _EditContactState extends State<EditContact> {
         decoration: InputDecoration(
           border: const UnderlineInputBorder(),
           labelText: field,
+        ),
       ),
-      ), 
     );
   }
 
   @override
   Widget build(BuildContext context) {
     final vue = Scaffold(
-      appBar: AppBar(
-        title: const Text('Contact', style: TextStyle(),),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: TextButton(
+        appBar: AppBar(
+            title: const Text(
+              'Contact',
+              style: TextStyle(),
+            ),
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: TextButton(
                   child: const Text('Save'),
                   onPressed: () {
                     // myContacts.add(contact);
                     Navigator.pop(context);
                   },
-                  ),
-          )
-        ]
-      ),
-      body: SingleChildScrollView(
-            child: Column(
-            children: [
-              const Padding(padding: EdgeInsets.all(50),)
-            ]
-      ),
-      )
-    );
+                ),
+              )
+            ]),
+        body: SingleChildScrollView(
+          child: Column(children: [
+            const Padding(
+              padding: EdgeInsets.all(50),
+            )
+          ]),
+        ));
     return vue;
   }
 }

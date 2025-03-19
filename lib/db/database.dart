@@ -41,7 +41,6 @@ class DatabaseHelper {
 
   Future _upgradeDB(Database db, int oldVersion, int newVersion) async {
     if (oldVersion < 2) {
-
       await db.execute('''
         CREATE TABLE contacts_new (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -99,5 +98,4 @@ class DatabaseHelper {
     final db = await _database;
     if (db != null) await db.close();
   }
-
 }

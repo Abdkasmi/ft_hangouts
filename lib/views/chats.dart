@@ -11,9 +11,8 @@ class _ChatsState extends State<Chats> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Chats'),
-        )
-    );
+        body: Center(
+      child: Text('Chats'),
+    ));
   }
 }

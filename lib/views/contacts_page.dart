@@ -9,7 +9,7 @@ class ContactsPage extends StatefulWidget {
 
 class _ContactsPageState extends State<ContactsPage> {
   late Future<List<Contact>> _contacts;
-  
+
   @override
   void initState() {
     super.initState();
@@ -26,30 +26,33 @@ class _ContactsPageState extends State<ContactsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        toolbarHeight: 100,
-        title: const Align(
-          alignment: Alignment.centerLeft,
-          child: Padding(
-            padding: EdgeInsets.only(left: 15, top: 10),
-            child: Text(
-              'Contacts', 
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold)
-              ,)
+          automaticallyImplyLeading: false,
+          toolbarHeight: 100,
+          title: const Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                  padding: EdgeInsets.only(left: 15, top: 10),
+                  child: Text(
+                    'Contacts',
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                  ))),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 20, top: 10),
+              child: FloatingActionButton.small(
+                elevation: 0,
+                shape: const CircleBorder(),
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const NewContact())),
+                child: const Icon(
+                  Icons.add,
+                  color: Colors.black,
+                ),
+              ),
             )
-          ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 20, top: 10),
-            child: FloatingActionButton.small(
-              elevation: 0,
-              shape: const CircleBorder(),
-              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const NewContact())),
-              child: const Icon(Icons.add, color: Colors.black,),
-            ),
-          )
-        ]
-      ),
+          ]),
       body: FutureBuilder<List<Contact>>(
         future: _contacts,
         builder: (context, snapshot) {
@@ -65,14 +68,19 @@ class _ContactsPageState extends State<ContactsPage> {
               itemBuilder: (context, index) {
                 final contact = snapshot.data![index];
                 return GestureDetector(
-                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EditContact(contact: contact))),
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => EditContact(contact: contact))),
                   child: Column(
                     children: [
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
-                          padding: const EdgeInsets.only(left: 35, bottom: 5, top: 5),
-                          child: Text( '${contact.firstName} ${contact.lastName}',
+                          padding: const EdgeInsets.only(
+                              left: 35, bottom: 5, top: 5),
+                          child: Text(
+                              '${contact.firstName} ${contact.lastName}',
                               style: TextStyle(
                                   fontSize: 11,
                                   color: Colors.grey.shade800,
